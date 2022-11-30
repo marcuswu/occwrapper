@@ -13,6 +13,7 @@ endif()
 
 include(FetchContent)
 
-find_package(OpenCascade REQUIRED)
+find_package(OpenCASCADE REQUIRED)
+include_directories(${OpenCASCADE_INCLUDE_DIR})
 
 add_subdirectory(src)
