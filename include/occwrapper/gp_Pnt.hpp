@@ -16,10 +16,10 @@ extern "C" {
     bool gpPntIsEqual(gpPnt pnt, gpPnt other, double tolerance);
     double gpPntDistance(gpPnt pnt, gpPnt other);
     double gpPntSquareDistance(gpPnt pnt, gpPnt other);
-    void gpPntMirror(gpPnt pnt, gpPnt center);
-    gpPnt gpPntMirrored(gpPnt pnt, gpPnt center);
-    void gpPntMirror(gpPnt pnt, gpAx1 axis);
-    gpPnt gpPntMirrored(gpPnt pnt, gpAx1 axis);
+    void gpPntMirrorCenterPoint(gpPnt pnt, gpPnt center);
+    gpPnt gpPntMirroredCenterPoint(gpPnt pnt, gpPnt center);
+    void gpPntMirrorAxis(gpPnt pnt, gpAx1 axis);
+    gpPnt gpPntMirroredAxis(gpPnt pnt, gpAx1 axis);
     void gpPntRotate(gpPnt pnt, gpAx1 axis, double angle);
     gpPnt gpPntRotated(gpPnt pnt, gpAx1 axis, double angle);
     void gpPntScale(gpPnt pnt, gpPnt other, double scale);
@@ -28,8 +28,8 @@ extern "C" {
     gpPnt gpPntTransformed(gpPnt pnt, gpTrsf transform);
     void gpPntTranslate(gpPnt pnt, gpVec vector);
     gpPnt gpPntTranslated(gpPnt pnt, gpVec vector);
-    void gpPntTranslate(gpPnt pnt, gpPnt pnt1, gpPnt pnt2);
-    gpPnt gpPntTranslated(gpPnt pnt, gpPnt pnt1, gpPnt pnt2);
+    void gpPntTranslatePoints(gpPnt pnt, gpPnt pnt1, gpPnt pnt2);
+    gpPnt gpPntTranslatedPoints(gpPnt pnt, gpPnt pnt1, gpPnt pnt2);
 #ifdef __cplusplus
 }
 #endif
