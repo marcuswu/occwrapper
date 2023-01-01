@@ -1,5 +1,6 @@
 set(HEADER_LIST 
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepalgoapi.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepprimapi.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_adapter.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_builder.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_Curve.hpp
@@ -16,6 +17,7 @@ set(HEADER_LIST
 
 set(SOURCE_LIST
     brepalgoapi.cpp
+    brepprimapi.cpp
     brep_adapter.cpp
     brep_builder.cpp
     geom_Curve.cpp
