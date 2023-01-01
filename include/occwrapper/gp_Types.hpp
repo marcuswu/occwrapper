@@ -15,6 +15,9 @@ extern "C" {
     typedef void* gpVec;
     typedef void* BRepAdapterCurve;
     typedef void* BRepAdapterSurface;
+    typedef void* BRepAlgoAPIBooleanOperation;
+    typedef void* BRepAlgoAPICut;
+    typedef void* BRepAlgoAPIFuse;
     typedef void* BRepBuilderAPIMakeEdge;
     typedef void* BRepBuilderAPIMakeWire;
     typedef void* BRepBuilderAPIMakeFace;
@@ -24,6 +27,7 @@ extern "C" {
     typedef void* TopoDSEdge;
     typedef void* TopoDSWire;
     typedef void* TopoDSFace;
+    typedef void* TopoDSShape;
 #ifdef __cplusplus
 }
 #endif
