@@ -1,9 +1,13 @@
 set(HEADER_LIST 
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepalgoapi.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepgprop.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepmesh.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepprimapi.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/breptools.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_adapter.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_builder.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_Curve.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gprop.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Ax1.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Ax2.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Ax3.hpp
@@ -17,10 +21,14 @@ set(HEADER_LIST
 
 set(SOURCE_LIST
     brepalgoapi.cpp
+    brepgprop.cpp
+    brepmesh.cpp
     brepprimapi.cpp
+    breptools.cpp
     brep_adapter.cpp
     brep_builder.cpp
     geom_Curve.cpp
+    gprop.cpp
     gp_Ax1.cpp
     gp_Ax2.cpp
     gp_Ax3.cpp

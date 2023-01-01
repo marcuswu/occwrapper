@@ -23,8 +23,10 @@ extern "C" {
     typedef void* BRepBuilderAPIMakeFace;
     typedef void* BRepBuilderAPIMakeShape;
     typedef void* BRepBuilder;
+    typedef void* BRepMeshIncrementalMesh;
     typedef void* BRepPrimAPIMakePrism;
     typedef void* BRepPrimAPIMakeRevol;
+    typedef void* GPropGProps;
     typedef void* GeomCurve;
     typedef void* TopoDSCompound;
     typedef void* TopoDSEdge;
