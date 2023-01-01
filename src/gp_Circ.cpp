@@ -9,5 +9,5 @@ gpAx1 gpCircInit(gpAx2 center, double radius) {
 
 double gpCirclRadius(gpCirc circle) {
     gp_Circ *circ = (gp_Circ *)circle;
-    return circl->Radius();
+    return circ->Radius();
 }

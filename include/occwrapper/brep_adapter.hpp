@@ -6,33 +6,15 @@
 extern "C" {
 #endif
 
-BRepAdapterCurve BRepAdapterCurveInit(TopoDSEdge edge) {
-    TopoDS_Edge *e = (TopoDS_Edge*)edge;
-    BRepAdapter_Curve *ret = new BRepAdapter_Curve(*e);
-    return (void *) ret;
-};
+BRepAdapterCurve BRepAdapterCurveInit(TopoDSEdge edge);
+bool BRepAdapterCurveIsLine(BRepAdapterCurve curve);
+bool BRepAdapterCurveIsCircle(BRepAdapterCurve curve);
+bool BRepAdapterCurveIsEllipse(BRepAdapterCurve curve);
+gpCirc BRepAdapterCurveToCircle(BRepAdapterCurve curve);
 
-bool BRepAdapterCurveIsLine(BRepAdapterCurve curve) {
-    BRepAdapter_Curve *c = (BRepAdapter_Curve *) curve;
-    return c->GetType == GeomAbs_CurveType::GeomAbs_Line;
-}
-
-bool BRepAdapterCurveIsCircle(BRepAdapterCurve curve) {
-    BRepAdapter_Curve *c = (BRepAdapter_Curve *) curve;
-    return c->GetType == GeomAbs_CurveType::GeomAbs_Circle;
-}
-
-bool BRepAdapterCurveIsEllipse(BRepAdapterCurve curve) {
-    BRepAdapter_Curve *c = (BRepAdapter_Curve *) curve;
-    return c->GetType == GeomAbs_CurveType::GeomAbs_Ellipse;
-}
-
-gpCirc BRepAdapterCurveToCircle(BRepAdapterCurve curve) {
-    BRepAdapter_Curve *c = (BRepAdapter_Curve *) curve;
-    gp_Circ circle = curve->Circle();
-    gp_Circ *ret = new gp_Circ(circle.Position(), circle.Radius());
-    return (void *) ret;
-}
+BRepAdapterSurface BRepAdapterSurfaceInit(TopoDSFace face);
+BRepAdapterSurface BRepAdapterSurfaceInitRestriction(TopoDSFace face, bool restriction);
+gpPln BRepAdapterSurfacePlane(BRepAdapterSurface surface);
 
 #ifdef __cplusplus
 }

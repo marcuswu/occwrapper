@@ -9,10 +9,12 @@ extern "C" {
     typedef void* gpAx3;
     typedef void* gpCirc;
     typedef void* gpDir;
+    typedef void* gpPln;
     typedef void* gpPnt;
     typedef void* gpTrsf;
     typedef void* gpVec;
     typedef void* BRepAdapterCurve;
+    typedef void* BRepAdapterSurface;
     typedef void* BRepBuilderAPIMakeEdge;
     typedef void* BRepBuilderAPIMakeWire;
     typedef void* BRepBuilderAPIMakeFace;

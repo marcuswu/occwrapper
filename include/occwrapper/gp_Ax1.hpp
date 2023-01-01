@@ -6,6 +6,7 @@
 extern "C" {
 #endif
     gpAx1 gpAx1Init(gpPnt origin, gpDir dir);
+    gpDir gpAx1Direction(gpAx1 axis);
 #ifdef __cplusplus
 }
 #endif
