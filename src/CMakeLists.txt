@@ -32,6 +32,12 @@ set(SOURCE_LIST
 
 add_library(occwrapper ${SOURCE_LIST} ${HEADER_LIST})
 
+target_compile_options(occwrapper PRIVATE
+     $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
+          -Wall>
+     $<$<CXX_COMPILER_ID:MSVC>:
+          /W4>)
+
 target_include_directories(occwrapper PUBLIC ../include)
 
 set (OCCT_LIBS
