@@ -6,6 +6,8 @@ set(HEADER_LIST
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/breptools.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_adapter.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_builder.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_tool.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_adapter.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_Curve.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gprop.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Ax1.hpp
@@ -27,6 +29,8 @@ set(SOURCE_LIST
     breptools.cpp
     brep_adapter.cpp
     brep_builder.cpp
+    brep_tool.cpp
+    geom_adapter.cpp
     geom_Curve.cpp
     gprop.cpp
     gp_Ax1.cpp

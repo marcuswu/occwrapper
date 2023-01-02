@@ -3,6 +3,7 @@
 extern "C" {
 #endif
     typedef void* gcCircle;
+    typedef void* gcSurface;
     typedef void* gcTrimmedCurve;
     typedef void* gpAx1;
     typedef void* gpAx2;
@@ -27,12 +28,14 @@ extern "C" {
     typedef void* BRepPrimAPIMakePrism;
     typedef void* BRepPrimAPIMakeRevol;
     typedef void* GPropGProps;
+    typedef void* GeomAdapterSurface;
     typedef void* GeomCurve;
     typedef void* TopoDSCompound;
     typedef void* TopoDSEdge;
     typedef void* TopoDSWire;
     typedef void* TopoDSFace;
     typedef void* TopoDSShape;
+    typedef void* TopoDSVertex;
 #ifdef __cplusplus
 }
 #endif
