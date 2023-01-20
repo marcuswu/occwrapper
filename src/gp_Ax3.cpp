@@ -22,3 +22,10 @@ gpDir gpAx3YDirection(gpAx3 coord) {
     *ret = c->YDirection();
     return (void*) ret;
 }
+
+gpDir gpAx3Direction(gpAx3 coord) {
+    gp_Ax3 * c = (gp_Ax3 *)coord;
+    gp_Dir *ret = new gp_Dir();
+    *ret = c->Direction();
+    return (void*) ret;
+}

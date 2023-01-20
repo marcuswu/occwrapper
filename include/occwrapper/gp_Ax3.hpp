@@ -8,6 +8,7 @@ extern "C" {
     gpAx3 gpAx3Init(gpPnt origin, gpDir normal, gpDir xDir);
     gpDir gpAx3XDirection(gpAx3 coord);
     gpDir gpAx3YDirection(gpAx3 coord);
+    gpDir gpAx3Direction(gpAx3 coord);
 #ifdef __cplusplus
 }
 #endif

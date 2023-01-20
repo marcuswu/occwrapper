@@ -29,13 +29,19 @@ extern "C" {
     typedef void* BRepPrimAPIMakeRevol;
     typedef void* GPropGProps;
     typedef void* GeomAdapterSurface;
+    typedef void* GeomLPropSLProps;
     typedef void* GeomCurve;
+    typedef void* STEPControlWriter;
+    typedef void* ShapeIterator;
+		typedef void* StlAPIWriter;
     typedef void* TopoDSCompound;
     typedef void* TopoDSEdge;
     typedef void* TopoDSWire;
     typedef void* TopoDSFace;
     typedef void* TopoDSShape;
     typedef void* TopoDSVertex;
+    typedef void* TopExpExplorer;
+    typedef void* TopToolsListOfShape;
 #ifdef __cplusplus
 }
 #endif

@@ -7,6 +7,7 @@ set(HEADER_LIST
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_adapter.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_builder.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_tool.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geomlprop_slprops.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_adapter.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_Curve.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gprop.hpp
@@ -19,6 +20,7 @@ set(HEADER_LIST
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Pnt.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Trsf.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Vec.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/stepcontrol_writer.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/TopoDS_Compound.hpp)
 
 set(SOURCE_LIST
@@ -30,6 +32,7 @@ set(SOURCE_LIST
     brep_adapter.cpp
     brep_builder.cpp
     brep_tool.cpp
+    geomlprop_slprops.cpp
     geom_adapter.cpp
     geom_Curve.cpp
     gprop.cpp
@@ -42,17 +45,26 @@ set(SOURCE_LIST
     gp_Pnt.cpp
     gp_Trsf.cpp
     gp_Vec.cpp
+		stepcontrol_writer.cpp
     TopoDS_Compound.cpp)
 
-add_library(occwrapper ${SOURCE_LIST} ${HEADER_LIST})
+add_library(occwrapper SHARED ${SOURCE_LIST} ${HEADER_LIST})
+add_library(occwrapper_static STATIC ${SOURCE_LIST} ${HEADER_LIST})
 
-target_compile_options(occwrapper PRIVATE
+target_compile_options(occwrapper PUBLIC
+     $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
+          -Wall>
+     $<$<CXX_COMPILER_ID:MSVC>:
+          /W4>)
+
+target_compile_options(occwrapper_static PUBLIC
      $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
           -Wall>
      $<$<CXX_COMPILER_ID:MSVC>:
           /W4>)
 
 target_include_directories(occwrapper PUBLIC ../include)
+target_include_directories(occwrapper_static PUBLIC ../include)
 
 set (OCCT_LIBS
     TKSTL
@@ -64,9 +76,11 @@ set (OCCT_LIBS
     TKMesh
     TKBO)
 
-target_link_libraries(occwrapper PRIVATE ${OCC_LIBS})
+target_link_libraries(occwrapper PUBLIC ${OCC_LIBS})
+target_link_libraries(occwrapper_static PUBLIC ${OCC_LIBS})
 
 target_compile_features(occwrapper PUBLIC cxx_std_11)
+target_compile_features(occwrapper_static PUBLIC cxx_std_11)
 
 source_group(
     TREE "${PROJECT_SOURCE_DIR}/include"

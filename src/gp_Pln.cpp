@@ -32,3 +32,9 @@ gpAx3 gpPlnPosition(gpPln plane) {
     *ax3 = p->Position();
     return (void *) ax3;
 }
+
+bool gpPlnContainsPoint(gpPln plane, gpPnt point, double tolerance) {
+    gp_Pln * p = (gp_Pln *) plane;
+    gp_Pnt * pnt = (gp_Pnt *) point;
+    return p->Contains(*pnt, tolerance);
+}
