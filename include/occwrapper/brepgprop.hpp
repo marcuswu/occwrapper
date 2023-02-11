@@ -1,13 +1,13 @@
 #include <BRepGProp.hxx>
 #include <GProp_GProps.hxx>
 
-#include "gp_Types.hpp"
+#include "occ_types.hpp"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void BRepGPropSurfaceProperties(TopoDSShape shape, GPropGProps sprops, bool skipShared, bool useTriangulation);
+void BRepGProp_SurfaceProperties(TopoDSShape shape, GPropGProps sprops, bool skipShared, bool useTriangulation);
 
 #ifdef __cplusplus
 }

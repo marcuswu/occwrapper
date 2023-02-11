@@ -1,13 +1,14 @@
 #include <BRep_Tool.hxx>
 
-#include "gp_Types.hpp"
+#include "occ_types.hpp"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-gcSurface BRepToolSurface(TopoDSFace face);
-gpPnt BRepToolPnt(TopoDSVertex vertex);
+gcSurface BRepTool_Surface(TopoDSFace face);
+void GCSurface_Free(gcSurface surface);
+gpPnt BRepTool_Pnt(TopoDSVertex vertex);
 
 #ifdef __cplusplus
 }

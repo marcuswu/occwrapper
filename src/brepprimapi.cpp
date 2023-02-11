@@ -3,7 +3,7 @@
 #include <BRepBuilderAPI_MakeShape.hxx>
 #include <occwrapper/brepprimapi.hpp>
 
-BRepPrimAPIMakeRevol BRepPrimAPIMakeRevolInit(TopoDSFace face, gpAx1 axis, double degrees) {
+BRepPrimAPIMakeRevol BRepPrimAPIMakeRevol_Init(TopoDSFace face, gpAx1 axis, double degrees) {
     TopoDS_Face *f = (TopoDS_Face *)face;
     gp_Ax1 *a = (gp_Ax1 *)axis;
     BRepPrimAPI_MakeRevol *ret = new BRepPrimAPI_MakeRevol(*f, *a, degrees);
@@ -11,9 +11,19 @@ BRepPrimAPIMakeRevol BRepPrimAPIMakeRevolInit(TopoDSFace face, gpAx1 axis, doubl
 
 }
 
-BRepPrimAPIMakePrism BRepPrimAPIMakePrismInit(TopoDSFace face, gpVec vec) {
+void BRepPrimAPIMakeRevol_Free(BRepPrimAPIMakeRevol makeRevol) {
+    BRepPrimAPI_MakeRevol *revol = (BRepPrimAPI_MakeRevol *)makeRevol;
+    delete revol;
+}
+
+BRepPrimAPIMakePrism BRepPrimAPIMakePrism_Init(TopoDSFace face, gpVec vec) {
     TopoDS_Face *f = (TopoDS_Face *)face;
     gp_Vec *v = (gp_Vec *)vec;
     BRepPrimAPI_MakePrism *ret = new BRepPrimAPI_MakePrism(*f, *v);
     return (void*) ret;
+}
+
+void BRepPrimAPIMakePrism_Free(BRepPrimAPIMakePrism makePrism) {
+    BRepPrimAPI_MakePrism *prism = (BRepPrimAPI_MakePrism *)makePrism;
+    delete prism;
 }

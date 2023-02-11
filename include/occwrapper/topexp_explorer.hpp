@@ -1,7 +1,7 @@
 #include <TopExp_Explorer.hxx>
 #include <TopAbs_ShapeEnum.hxx>
 
-#include "gp_Types.hpp"
+#include "occ_types.hpp"
 
 typedef int TopAbsShapeEnum;
 TopAbsShapeEnum TopAbsCompound = TopAbs_COMPOUND;
@@ -17,11 +17,12 @@ TopAbsShapeEnum TopAbsShape = TopAbs_SHAPE;
 #ifdef __cplusplus
 extern "C" {
 #endif
-    TopExpExplorer TopExpExplorerInit(TopoDSShape shape, TopAbsShapeEnum toFind);
-    bool TopExpExplorerMore(TopExpExplorer exp);
-    void TopExpExplorerNext(TopExpExplorer exp);
-    TopoDSShape TopExpExplorerCurrent(TopExpExplorer exp);
-    int TopExpExplorerDepth(TopExpExplorer exp);
+    TopExpExplorer TopExpExplorer_Init(TopoDSShape shape, TopAbsShapeEnum toFind);
+    void TopExpExplorer_Free(TopExpExplorer exp);
+    bool TopExpExplorer_More(TopExpExplorer exp);
+    void TopExpExplorer_Next(TopExpExplorer exp);
+    TopoDSShape TopExpExplorer_Current(TopExpExplorer exp);
+    int TopExpExplorer_Depth(TopExpExplorer exp);
 #ifdef __cplusplus
 }
 #endif

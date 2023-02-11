@@ -1,2 +1,2 @@
-- [ ] Add Free methods
-- [ ] Improve naming, filename consistency
+- [x] Add Free methods
+- [x] Improve naming, filename consistency

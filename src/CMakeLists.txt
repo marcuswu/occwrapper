@@ -9,19 +9,19 @@ set(HEADER_LIST
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_tool.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geomlprop_slprops.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_adapter.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_Curve.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_curve.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gprop.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Ax1.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Ax2.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Ax3.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Circ.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Dir.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Pln.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Pnt.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Trsf.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_Vec.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_ax1.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_ax2.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_ax3.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_circ.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_dir.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_pln.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_pnt.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_trsf.hpp
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_vec.hpp
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/stepcontrol_writer.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/TopoDS_Compound.hpp)
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/topods_compound.hpp)
 
 set(SOURCE_LIST
     brepalgoapi.cpp
@@ -34,19 +34,19 @@ set(SOURCE_LIST
     brep_tool.cpp
     geomlprop_slprops.cpp
     geom_adapter.cpp
-    geom_Curve.cpp
+    geom_curve.cpp
     gprop.cpp
-    gp_Ax1.cpp
-    gp_Ax2.cpp
-    gp_Ax3.cpp
-    gp_Circ.cpp
-    gp_Dir.cpp
-    gp_Pln.cpp
-    gp_Pnt.cpp
-    gp_Trsf.cpp
-    gp_Vec.cpp
-		stepcontrol_writer.cpp
-    TopoDS_Compound.cpp)
+    gp_ax1.cpp
+    gp_ax2.cpp
+    gp_ax3.cpp
+    gp_circ.cpp
+    gp_dir.cpp
+    gp_pln.cpp
+    gp_pnt.cpp
+    gp_trsf.cpp
+    gp_vec.cpp
+	stepcontrol_writer.cpp
+    topods_compound.cpp)
 
 add_library(occwrapper SHARED ${SOURCE_LIST} ${HEADER_LIST})
 add_library(occwrapper_static STATIC ${SOURCE_LIST} ${HEADER_LIST})

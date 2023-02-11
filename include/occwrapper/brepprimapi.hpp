@@ -1,13 +1,15 @@
 #include <BRepPrimAPI_MakePrism.hxx>
 #include <BRepPrimAPI_MakeRevol.hxx>
-#include "gp_Types.hpp"
+#include "occ_types.hpp"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-BRepPrimAPIMakeRevol BRepPrimAPIMakeRevolInit(TopoDSFace face, gpAx1 axis, double degrees);
-BRepPrimAPIMakePrism BRepPrimAPIMakePrismInit(TopoDSFace face, gpVec vec);
+BRepPrimAPIMakeRevol BRepPrimAPIMakeRevol_Init(TopoDSFace face, gpAx1 axis, double degrees);
+void BRepPrimAPIMakeRevol_Free(BRepPrimAPIMakeRevol makeRevol);
+BRepPrimAPIMakePrism BRepPrimAPIMakePrism_Init(TopoDSFace face, gpVec vec);
+void BRepPrimAPIMakePrism_Free(BRepPrimAPIMakePrism makePrism);
 
 #ifdef __cplusplus
 }

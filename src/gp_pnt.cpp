@@ -1,71 +1,76 @@
 #include <gp_Pnt.hxx>
-#include <occwrapper/gp_Pnt.hpp>
+#include <occwrapper/gp_pnt.hpp>
 
-gpPnt gpPntInit(double x, double y, double z) {
+gpPnt gpPnt_Init(double x, double y, double z) {
     gp_Pnt * ret = new gp_Pnt(x, y, z);
     return (void*) ret;
 }
 
-void gpPntSetCoord(gpPnt pnt, double x, double y, double z) {
+void gpPnt_Free(gpPnt pnt) {
+    gp_Pnt * p = (gp_Pnt *)pnt;
+    delete p;
+}
+
+void gpPnt_SetCoord(gpPnt pnt, double x, double y, double z) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     p->SetCoord(x, y, z);
 }
 
-void gpPntSetX(gpPnt pnt, double x) {
+void gpPnt_SetX(gpPnt pnt, double x) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     p->SetX(x);
 }
 
-void gpPntSetY(gpPnt pnt, double y) {
+void gpPnt_SetY(gpPnt pnt, double y) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     p->SetY(y);
 }
 
-void gpPntSetZ(gpPnt pnt, double z) {
+void gpPnt_SetZ(gpPnt pnt, double z) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     p->SetZ(z);
 }
 
-double gpPntX(gpPnt pnt) {
+double gpPnt_X(gpPnt pnt) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     return p->X();
 }
 
-double gpPntY(gpPnt pnt) {
+double gpPnt_Y(gpPnt pnt) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     return p->Y();
 }
 
-double gpPntZ(gpPnt pnt) {
+double gpPnt_Z(gpPnt pnt) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     return p->Z();
 }
 
-bool gpPntIsEqual(gpPnt pnt, gpPnt other, double tolerance) {
+bool gpPnt_IsEqual(gpPnt pnt, gpPnt other, double tolerance) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Pnt * o = (gp_Pnt *)other;
     return p->IsEqual(*o, tolerance);
 }
 
-double gpPntDistance(gpPnt pnt, gpPnt other) {
+double gpPnt_Distance(gpPnt pnt, gpPnt other) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Pnt * o = (gp_Pnt *)other;
     return p->Distance(*o);
 }
 
-double gpPntSquareDistance(gpPnt pnt, gpPnt other) {
+double gpPnt_SquareDistance(gpPnt pnt, gpPnt other) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Pnt * o = (gp_Pnt *)other;
     return p->SquareDistance(*o);
 }
 
-void gpPntMirrorCenterPoint(gpPnt pnt, gpPnt center) {
+void gpPnt_MirrorCenterPoint(gpPnt pnt, gpPnt center) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Pnt * c = (gp_Pnt *)center;
     p->Mirror(*c);
 }
 
-gpPnt gpPntMirroredCenterPoint(gpPnt pnt, gpPnt center) {
+gpPnt gpPnt_MirroredCenterPoint(gpPnt pnt, gpPnt center) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Pnt * c = (gp_Pnt *)center;
     gp_Pnt * res = new gp_Pnt();
@@ -73,13 +78,13 @@ gpPnt gpPntMirroredCenterPoint(gpPnt pnt, gpPnt center) {
     return (void*) res;
 }
 
-void gpPntMirrorAxis(gpPnt pnt, gpAx1 axis) {
+void gpPnt_MirrorAxis(gpPnt pnt, gpAx1 axis) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Ax1* ax = (gp_Ax1 *)axis;
     p->Mirror(*ax);
 }
 
-gpPnt gpPntMirroredAxis(gpPnt pnt, gpAx1 axis) {
+gpPnt gpPnt_MirroredAxis(gpPnt pnt, gpAx1 axis) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Ax1* ax = (gp_Ax1 *)axis;
     gp_Pnt * res = new gp_Pnt();
@@ -87,13 +92,13 @@ gpPnt gpPntMirroredAxis(gpPnt pnt, gpAx1 axis) {
     return (void*) res;
 }
 
-void gpPntRotate(gpPnt pnt, gpAx1 axis, double angle) {
+void gpPnt_Rotate(gpPnt pnt, gpAx1 axis, double angle) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Ax1* ax = (gp_Ax1 *)axis;
     p->Rotate(*ax, angle);
 }
 
-gpPnt gpPntRotated(gpPnt pnt, gpAx1 axis, double angle) {
+gpPnt gpPnt_Rotated(gpPnt pnt, gpAx1 axis, double angle) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Ax1* ax = (gp_Ax1 *)axis;
     gp_Pnt * res = new gp_Pnt();
@@ -101,13 +106,13 @@ gpPnt gpPntRotated(gpPnt pnt, gpAx1 axis, double angle) {
     return (void*) res;
 }
 
-void gpPntScale(gpPnt pnt, gpPnt other, double scale) {
+void gpPnt_Scale(gpPnt pnt, gpPnt other, double scale) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Pnt * o = (gp_Pnt *)other;
     p->Scale(*o, scale);
 }
 
-gpPnt gpPntScaled(gpPnt pnt, gpPnt other, double scale) {
+gpPnt gpPnt_Scaled(gpPnt pnt, gpPnt other, double scale) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Pnt * o = (gp_Pnt *)other;
     gp_Pnt * res = new gp_Pnt();
@@ -115,13 +120,13 @@ gpPnt gpPntScaled(gpPnt pnt, gpPnt other, double scale) {
     return (void*) res;
 }
 
-void gpPntTransform(gpPnt pnt, gpTrsf transform) {
+void gpPnt_Transform(gpPnt pnt, gpTrsf transform) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Trsf * t = (gp_Trsf *)transform;
     p->Transform(*t);
 }
 
-gpPnt gpPntTransformed(gpPnt pnt, gpTrsf transform) {
+gpPnt gpPnt_Transformed(gpPnt pnt, gpTrsf transform) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Trsf* t = (gp_Trsf *)transform;
     gp_Pnt * res = new gp_Pnt();
@@ -129,13 +134,13 @@ gpPnt gpPntTransformed(gpPnt pnt, gpTrsf transform) {
     return (void*) res;
 }
 
-void gpPntTranslate(gpPnt pnt, gpVec vector) {
+void gpPnt_Translate(gpPnt pnt, gpVec vector) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Vec * v = (gp_Vec*)vector;
     p->Translate(*v);
 }
 
-gpPnt gpPntTranslated(gpPnt pnt, gpVec vector) {
+gpPnt gpPnt_Translated(gpPnt pnt, gpVec vector) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Vec * v = (gp_Vec*)vector;
     gp_Pnt * res = new gp_Pnt();
@@ -143,14 +148,14 @@ gpPnt gpPntTranslated(gpPnt pnt, gpVec vector) {
     return (void*) res;
 }
 
-void gpPntTranslatePoints(gpPnt pnt, gpPnt pnt1, gpPnt pnt2) {
+void gpPnt_TranslatePoints(gpPnt pnt, gpPnt pnt1, gpPnt pnt2) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Pnt * p1 = (gp_Pnt*)pnt1;
     gp_Pnt * p2 = (gp_Pnt*)pnt2;
     p->Translate(*p1, *p2);
 }
 
-gpPnt gpPntTranslatedPoints(gpPnt pnt, gpPnt pnt1, gpPnt pnt2) {
+gpPnt gpPnt_TranslatedPoints(gpPnt pnt, gpPnt pnt1, gpPnt pnt2) {
     gp_Pnt * p = (gp_Pnt *)pnt;
     gp_Pnt * p1 = (gp_Pnt*)pnt1;
     gp_Pnt * p2 = (gp_Pnt*)pnt2;

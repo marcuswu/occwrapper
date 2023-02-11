@@ -1,12 +1,13 @@
 #include <BRepMesh_IncrementalMesh.hxx>
 
-#include "gp_Types.hpp"
+#include "occ_types.hpp"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-BRepMeshIncrementalMesh BRepMeshIncrementalMeshInit(TopoDSShape shape, double linearDefl, bool isRelative, double angularDefl, bool isParallel);
+BRepMeshIncrementalMesh BRepMeshIncrementalMesh_Init(TopoDSShape shape, double linearDefl, bool isRelative, double angularDefl, bool isParallel);
+void BRepMeshIncrementalMesh_Free(BRepMeshIncrementalMesh mesh);
 
 #ifdef __cplusplus
 }

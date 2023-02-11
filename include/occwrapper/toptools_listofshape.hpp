@@ -1,15 +1,16 @@
 #include <TopTools_ListOfShape.hxx>
 
-#include "gp_Types.hpp"
+#include "occ_types.hpp"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-    TopToolsListOfShape TopToolsListOfShapeInit();
-    TopoDSShape TopToolsListOfShapeAppend(TopToolsListOfShape list, TopoDSShape shape);
-    ShapeIterator TopToolsListOfShapeBegin(TopToolsListOfShape list);
-    ShapeIterator ShapeIteratorNext(ShapeIterator iter);
-    TopoDSShape ShapeIteratorShape(ShapeIterator iter);
+    TopToolsListOfShape TopToolsListOfShape_Init();
+    void TopToolsListOfShape_Free(TopToolsListOfShape list);
+    TopoDSShape TopToolsListOfShape_Append(TopToolsListOfShape list, TopoDSShape shape);
+    ShapeIterator TopToolsListOfShape_Begin(TopToolsListOfShape list);
+    ShapeIterator ShapeIterator_Next(ShapeIterator iter);
+    TopoDSShape ShapeIterator_Shape(ShapeIterator iter);
 #ifdef __cplusplus
 }
 #endif

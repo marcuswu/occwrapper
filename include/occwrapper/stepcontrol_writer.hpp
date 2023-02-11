@@ -1,7 +1,7 @@
 #include <STEPControl_Writer.hxx>
 #include <STEPControl_StepModelType.hxx>
 
-#include "gp_Types.hpp"
+#include "occ_types.hpp"
 
 typedef int STEPControlStepModelType;
 STEPControlStepModelType STEPControlAsIs = STEPControl_AsIs;
@@ -16,9 +16,10 @@ STEPControlStepModelType STEPControlHybrid = STEPControl_Hybrid;
 #ifdef __cplusplus
 extern "C" {
 #endif
-    STEPControlWriter STEPControlWriterInit();
-    int STEPControlWriterTransfer(STEPControlWriter writer, TopoDSShape shape, STEPControlStepModelType type);
-    int STEPControlWriterWrite(STEPControlWriter writer, char *filename);
+    STEPControlWriter STEPControlWriter_Init();
+    int STEPControlWriter_Transfer(STEPControlWriter writer, TopoDSShape shape, STEPControlStepModelType type);
+    int STEPControlWriter_Write(STEPControlWriter writer, char *filename);
+    void STEPControlWriter_Free(STEPControlWriter writer);
 #ifdef __cplusplus
 }
 #endif

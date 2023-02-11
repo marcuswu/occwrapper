@@ -2,7 +2,7 @@
 #include <GC_MakeArcOfCircle.hxx>
 #include <GC_MakeSegment.hxx>
 
-#include <occwrapper/geom_Curve.hpp>
+#include <occwrapper/geom_curve.hpp>
 
 gcCircle gcMakeCircle(gpAx2 center, double radius) {
     gp_Ax2 * c = (gp_Ax2 *)center;
@@ -10,6 +10,11 @@ gcCircle gcMakeCircle(gpAx2 center, double radius) {
     // use new handle as our void* pointer
     Handle(Geom_Circle) *ret = new Handle(Geom_Circle)(GC_MakeCircle(*c, radius));
     return (void*) ret;
+}
+
+void gcCircle_Free(gcCircle circle) {
+    Handle(Geom_Circle) *c = (Handle(Geom_Circle) *)circle;
+    delete c;
 }
 
 gcTrimmedCurve gcMakeArcOfCircle(gpCirc circle, gpPnt pt1, gpPnt pt2, bool sense) {
@@ -21,6 +26,11 @@ gcTrimmedCurve gcMakeArcOfCircle(gpCirc circle, gpPnt pt1, gpPnt pt2, bool sense
     return (void*) ret;
 }
 
+void gcTrimmedCurve_Free(gcTrimmedCurve arc) {
+    Handle(Geom_TrimmedCurve) *a = (Handle(Geom_TrimmedCurve) *)arc;
+    delete a;
+}
+
 gcTrimmedCurve gcMakeSegment(gpPnt start, gpPnt end) {
     gp_Pnt *s= (gp_Pnt *)start;
     gp_Pnt *e= (gp_Pnt *)end;
@@ -29,10 +39,10 @@ gcTrimmedCurve gcMakeSegment(gpPnt start, gpPnt end) {
     return (void*) ret;
 }
 
-GeomCurve gcTrimmedCurveToGeomCurve(gcTrimmedCurve curve) {
+GeomCurve gcTrimmedCurve_ToGeomCurve(gcTrimmedCurve curve) {
     return (void*) curve;
 }
 
-GeomCurve gcCircleToGeomCurve(gcCircle curve) {
+GeomCurve gcCircle_ToGeomCurve(gcCircle curve) {
     return (void*) curve;
 }

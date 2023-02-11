@@ -2,23 +2,28 @@
 
 #include <occwrapper/geom_adapter.hpp>
 
-GeomAdapterSurface GeomAdapterSurfaceInit(gcSurface surface) {
+GeomAdapterSurface GeomAdapterSurface_Init(gcSurface surface) {
     Handle(Geom_Surface)* s = (Handle(Geom_Surface)*)surface;
     GeomAdaptor_Surface *ret = new GeomAdaptor_Surface(*s);
     return (void *) ret;
 }
 
-bool GeomAdapterSurfaceIsConical(GeomAdapterSurface surface) {
+void GeomAdapterSurface_Free(GeomAdapterSurface surface) {
+    GeomAdaptor_Surface *s = (GeomAdaptor_Surface *) surface;
+    delete s;
+}
+
+bool GeomAdapterSurface_IsConical(GeomAdapterSurface surface) {
     GeomAdaptor_Surface *s = (GeomAdaptor_Surface *) surface;
     return s->GetType() == GeomAbs_SurfaceType::GeomAbs_Cone;
 }
 
-bool GeomAdapterSurfaceIsCylindrical(GeomAdapterSurface surface) {
+bool GeomAdapterSurface_IsCylindrical(GeomAdapterSurface surface) {
     GeomAdaptor_Surface *s = (GeomAdaptor_Surface *) surface;
     return s->GetType() == GeomAbs_SurfaceType::GeomAbs_Cylinder;
 }
 
-bool GeomAdapterSurfaceIsPlanar(GeomAdapterSurface surface) {
+bool GeomAdapterSurface_IsPlanar(GeomAdapterSurface surface) {
     GeomAdaptor_Surface *s = (GeomAdaptor_Surface *) surface;
     return s->GetType() == GeomAbs_SurfaceType::GeomAbs_Plane;
 }

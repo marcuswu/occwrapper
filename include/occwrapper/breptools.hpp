@@ -1,11 +1,11 @@
 #include <BRepTools.hxx>
-#include "gp_Types.hpp"
+#include "occ_types.hpp"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void BRepToolsUVBounds(TopoDSFace face, double &umin, double &umax, double &vmin, double &vmax);
+void BRepTools_UVBounds(TopoDSFace face, double &umin, double &umax, double &vmin, double &vmax);
 
 #ifdef __cplusplus
 }
