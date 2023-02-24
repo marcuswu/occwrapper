@@ -1,5 +1,5 @@
 #include <TopTools_ListOfShape.hxx>
-#include <occwrapper/toptools_listofshape.hpp>
+#include <occwrapper/toptools_listofshape.h>
 
 TopToolsListOfShape TopToolsListOfShape_Init() {
     TopTools_ListOfShape *list= new TopTools_ListOfShape();

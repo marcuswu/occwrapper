@@ -1,5 +1,5 @@
 #include <BRep_Tool.hxx>
-#include <occwrapper/brep_tool.hpp>
+#include <occwrapper/brep_tool.h>
 
 gcSurface BRepTool_Surface(TopoDSFace face) {
     TopoDS_Face* f = (TopoDS_Face *)face;

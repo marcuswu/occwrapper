@@ -1,11 +1,10 @@
+#include <occwrapper/occ_types.h>
+
+#ifdef __cplusplus
 #include <BRepBuilderAPI_MakeEdge.hxx>
 #include <BRepBuilderAPI_MakeWire.hxx>
 #include <BRepBuilderAPI_MakeFace.hxx>
 #include <BRepBuilderAPI_Transform.hxx>
-
-#include "occ_types.hpp"
-
-#ifdef __cplusplus
 extern "C" {
 #endif
     BRepBuilder BRepBuilder_Init();

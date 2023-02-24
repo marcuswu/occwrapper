@@ -1,5 +1,5 @@
 #include <TopExp_Explorer.hxx>
-#include <occwrapper/topexp_explorer.hpp>
+#include <occwrapper/topexp_explorer.h>
 
 TopExpExplorer TopExpExplorer_Init(TopoDSShape shape, TopAbsShapeEnum toFind) {
     TopoDS_Shape *s = (TopoDS_Shape *) shape;

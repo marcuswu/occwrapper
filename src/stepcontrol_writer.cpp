@@ -1,6 +1,6 @@
 #include <STEPControl_Writer.hxx>
 #include <STEPControl_StepModelType.hxx>
-#include <occwrapper/stepcontrol_writer.hpp>
+#include <occwrapper/stepcontrol_writer.h>
 
 STEPControlWriter STEPControlWriter_Init() {
 	STEPControl_Writer *ret = new STEPControl_Writer();

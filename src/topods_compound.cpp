@@ -1,5 +1,5 @@
 #include <TopoDS_Compound.hxx>
-#include <occwrapper/topods_compound.hpp>
+#include <occwrapper/topods_compound.h>
 
 TopoDSCompound TopoDSCompound_Init() {
     TopoDS_Compound *ret = new TopoDS_Compound();

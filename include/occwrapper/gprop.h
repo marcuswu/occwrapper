@@ -1,8 +1,7 @@
-#include <GProp_GProps.hxx>
-
-#include "occ_types.hpp"
+#include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
+#include <GProp_GProps.hxx>
 extern "C" {
 #endif
     GPropGProps GPropGProps_Init();

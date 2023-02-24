@@ -1,5 +1,5 @@
 #include <gp_Dir.hxx>
-#include <occwrapper/gp_dir.hpp>
+#include <occwrapper/gp_dir.h>
 
 gpDir gpDir_Init(double x, double y, double z) {
     gp_Dir * ret = new gp_Dir(x, y, z);

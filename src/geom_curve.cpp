@@ -2,7 +2,7 @@
 #include <GC_MakeArcOfCircle.hxx>
 #include <GC_MakeSegment.hxx>
 
-#include <occwrapper/geom_curve.hpp>
+#include <occwrapper/geom_curve.h>
 
 gcCircle gcMakeCircle(gpAx2 center, double radius) {
     gp_Ax2 * c = (gp_Ax2 *)center;

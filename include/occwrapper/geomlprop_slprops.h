@@ -1,8 +1,7 @@
-#include <GeomLProp_SLProps.hxx>
-
-#include "occ_types.hpp"
+#include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
+#include <GeomLProp_SLProps.hxx>
 extern "C" {
 #endif
     GeomLPropSLProps GeomLPropSLProps_Init(gcSurface surface, double umin, double vmin, double n, double res);

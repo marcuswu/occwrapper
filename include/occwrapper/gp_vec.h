@@ -1,8 +1,7 @@
-#include <gp_Vec.hxx>
-
-#include "occ_types.hpp"
+#include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
+#include <gp_Vec.hxx>
 extern "C" {
 #endif
     gpVec gpVec_Init(double x, double y, double z);

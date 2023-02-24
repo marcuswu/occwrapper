@@ -1,5 +1,5 @@
 #include <gp_Circ.hxx>
-#include <occwrapper/gp_circ.hpp>
+#include <occwrapper/gp_circ.h>
 
 gpCirc gpCirc_Init(gpAx2 center, double radius) {
     gp_Ax2 * c = (gp_Ax2 *)center;

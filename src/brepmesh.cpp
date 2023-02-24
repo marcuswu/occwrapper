@@ -1,5 +1,5 @@
 #include <BRepMesh_IncrementalMesh.hxx>
-#include <occwrapper/brepmesh.hpp>
+#include <occwrapper/brepmesh.h>
 
 BRepMeshIncrementalMesh BRepMeshIncrementalMesh_Init(TopoDSShape shape, double linearDefl, bool isRelative, double angularDefl, bool isParallel) {
     TopoDS_Shape *s = (TopoDS_Shape *)shape;

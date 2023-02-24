@@ -1,5 +1,5 @@
 #include <gp_Vec.hxx>
-#include <occwrapper/gp_vec.hpp>
+#include <occwrapper/gp_vec.h>
 
 gpVec gpVec_Init(double x, double y, double z) {
     gp_Vec * ret = new gp_Vec(x, y, z);

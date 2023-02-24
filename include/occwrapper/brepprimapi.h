@@ -1,8 +1,8 @@
-#include <BRepPrimAPI_MakePrism.hxx>
-#include <BRepPrimAPI_MakeRevol.hxx>
-#include "occ_types.hpp"
+#include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
+#include <BRepPrimAPI_MakePrism.hxx>
+#include <BRepPrimAPI_MakeRevol.hxx>
 extern "C" {
 #endif
 

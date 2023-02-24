@@ -2,7 +2,7 @@
 #include <TopoDS_Compound.hxx>
 #include <BRepBuilderAPI_MakeEdge.hxx>
 #include <TopoDS_Wire.hxx>
-#include <occwrapper/brep_builder.hpp>
+#include <occwrapper/brep_builder.h>
 
 BRepBuilder BRepBuilder_Init() {
     BRepBuilder *b = new BRepBuilder();

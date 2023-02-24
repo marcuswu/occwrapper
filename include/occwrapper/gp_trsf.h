@@ -1,8 +1,7 @@
-#include <gp_Trsf.hxx>
-
-#include "occ_types.hpp"
+#include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
+#include <gp_Trsf.hxx>
 extern "C" {
 #endif
     gpTrsf gpTrsf_Init();

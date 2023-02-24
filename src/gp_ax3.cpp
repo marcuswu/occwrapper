@@ -1,5 +1,5 @@
 #include <gp_Ax3.hxx>
-#include <occwrapper/gp_ax3.hpp>
+#include <occwrapper/gp_ax3.h>
 
 gpAx3 gpAx3_Init(gpPnt origin, gpDir normal, gpDir xDir) {
     gp_Pnt * o = (gp_Pnt *)origin;

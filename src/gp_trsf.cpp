@@ -1,5 +1,5 @@
 #include <gp_Trsf.hxx>
-#include <occwrapper/gp_trsf.hpp>
+#include <occwrapper/gp_trsf.h>
 
 gpTrsf gpTrsf_Init() {
     gp_Trsf * ret = new gp_Trsf();

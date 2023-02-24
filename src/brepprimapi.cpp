@@ -1,7 +1,7 @@
 #include <BRepPrimAPI_MakePrism.hxx>
 #include <BRepPrimAPI_MakeRevol.hxx>
 #include <BRepBuilderAPI_MakeShape.hxx>
-#include <occwrapper/brepprimapi.hpp>
+#include <occwrapper/brepprimapi.h>
 
 BRepPrimAPIMakeRevol BRepPrimAPIMakeRevol_Init(TopoDSFace face, gpAx1 axis, double degrees) {
     TopoDS_Face *f = (TopoDS_Face *)face;

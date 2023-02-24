@@ -1,6 +1,6 @@
 #include <BRepAlgoAPI_Cut.hxx>
 #include <BRepAlgoAPI_Fuse.hxx>
-#include <occwrapper/brepalgoapi.hpp>
+#include <occwrapper/brepalgoapi.h>
 
 BRepAlgoAPIFuse BRepAlgoAPIFuse_Init() {
     BRepAlgoAPI_Fuse *ret = new BRepAlgoAPI_Fuse();

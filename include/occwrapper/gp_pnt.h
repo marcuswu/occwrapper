@@ -1,8 +1,7 @@
-#include <gp_Pnt.hxx>
-
-#include "occ_types.hpp"
+#include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
+#include <gp_Pnt.hxx>
 extern "C" {
 #endif
     gpPnt gpPnt_Init(double x, double y, double z);

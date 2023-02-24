@@ -1,6 +1,6 @@
 #include <BRepAdaptor_Curve.hxx>
 #include <BRepAdaptor_Surface.hxx>
-#include <occwrapper/brep_adapter.hpp>
+#include <occwrapper/brep_adapter.h>
 
 /*-----  BRepAdaptor_Curve -----*/
 

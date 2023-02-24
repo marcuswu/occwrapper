@@ -1,5 +1,5 @@
 #include <GeomLProp_SLProps.hxx>
-#include <occwrapper/geomlprop_slprops.hpp>
+#include <occwrapper/geomlprop_slprops.h>
 
 GeomLPropSLProps GeomLPropSLProps_Init(gcSurface surface, double umin, double vmin, double n, double res) {
     Handle(Geom_Surface)* s = (Handle(Geom_Surface)*)surface;

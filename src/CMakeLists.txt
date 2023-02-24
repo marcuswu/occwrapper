@@ -1,27 +1,32 @@
 set(HEADER_LIST 
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepalgoapi.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepgprop.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepmesh.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepprimapi.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/breptools.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_adapter.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_builder.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_tool.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geomlprop_slprops.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_adapter.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_curve.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gprop.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_ax1.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_ax2.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_ax3.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_circ.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_dir.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_pln.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_pnt.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_trsf.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_vec.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/stepcontrol_writer.hpp
-    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/topods_compound.hpp)
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepalgoapi.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepgprop.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepmesh.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepprimapi.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/breptools.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_adapter.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_builder.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_tool.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geomlprop_slprops.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_adapter.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_curve.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gprop.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_ax1.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_ax2.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_ax3.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_circ.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_dir.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_pln.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_pnt.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_trsf.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_vec.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/occ_types.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/stlapi_writer.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/stepcontrol_writer.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/topexp_explorer.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/topods_compound.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/topods_shape.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/toptools_listofshape.h)
 
 set(SOURCE_LIST
     brepalgoapi.cpp
@@ -45,8 +50,12 @@ set(SOURCE_LIST
     gp_pnt.cpp
     gp_trsf.cpp
     gp_vec.cpp
-	stepcontrol_writer.cpp
-    topods_compound.cpp)
+    stlapi_writer.cpp
+    stepcontrol_writer.cpp
+    topexp_explorer.cpp
+    topods_shape.cpp
+    topods_compound.cpp
+    toptools_listofshape.cpp)
 
 add_library(occwrapper SHARED ${SOURCE_LIST} ${HEADER_LIST})
 add_library(occwrapper_static STATIC ${SOURCE_LIST} ${HEADER_LIST})
@@ -76,8 +85,8 @@ set (OCCT_LIBS
     TKMesh
     TKBO)
 
-target_link_libraries(occwrapper PUBLIC ${OCC_LIBS})
-target_link_libraries(occwrapper_static PUBLIC ${OCC_LIBS})
+target_link_libraries(occwrapper PUBLIC ${OCCT_LIBS})
+target_link_libraries(occwrapper_static PUBLIC ${OCCT_LIBS})
 
 target_compile_features(occwrapper PUBLIC cxx_std_11)
 target_compile_features(occwrapper_static PUBLIC cxx_std_11)
@@ -87,3 +96,16 @@ source_group(
     PREFIX "Header Files"
     FILES ${HEADER_LIST}
 )
+
+set_property(TARGET occwrapper
+    PROPERTY PUBLIC_HEADER ${HEADER_LIST})
+set_property(TARGET occwrapper PROPERTY POSITION_INDEPENDENT_CODE ON)
+set_property(TARGET occwrapper_static PROPERTY POSITION_INDEPENDENT_CODE ON)
+
+install (TARGETS occwrapper
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    PUBLIC_HEADER DESTINATION include/occwrapper)
+
+configure_file(occwrapper.pc.in occwrapper.pc @ONLY)
+
+install(FILES ${CMAKE_BINARY_DIR}/src/occwrapper.pc DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig)

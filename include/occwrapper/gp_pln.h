@@ -1,8 +1,7 @@
-#include <gp_Pln.hxx>
-
-#include "occ_types.hpp"
+#include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
+#include <gp_Pln.hxx>
 extern "C" {
 #endif
     gpPln gpPln_Init();

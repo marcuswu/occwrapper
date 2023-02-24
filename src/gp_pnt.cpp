@@ -1,5 +1,5 @@
 #include <gp_Pnt.hxx>
-#include <occwrapper/gp_pnt.hpp>
+#include <occwrapper/gp_pnt.h>
 
 gpPnt gpPnt_Init(double x, double y, double z) {
     gp_Pnt * ret = new gp_Pnt(x, y, z);

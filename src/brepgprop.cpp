@@ -1,6 +1,6 @@
 #include <GProp_GProps.hxx>
 #include <BRepGProp.hxx>
-#include <occwrapper/brepgprop.hpp>
+#include <occwrapper/brepgprop.h>
 
 void BRepGProp_SurfaceProperties(TopoDSShape shape, GPropGProps sprops, bool skipShared, bool useTriangulation) {
     TopoDS_Shape *s = (TopoDS_Shape *)shape;

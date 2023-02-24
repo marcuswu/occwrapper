@@ -1,6 +1,6 @@
 #include <GProp_GProps.hxx>
 
-#include "occwrapper/gprop.hpp"
+#include "occwrapper/gprop.h"
 
 GPropGProps GPropGProps_Init() {
     GProp_GProps *ret = new GProp_GProps();

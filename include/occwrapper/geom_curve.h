@@ -1,10 +1,9 @@
+#include <occwrapper/occ_types.h>
+
+#ifdef __cplusplus
 #include <GC_MakeCircle.hxx>
 #include <GC_MakeSegment.hxx>
 #include <GC_MakeArcOfCircle.hxx>
-
-#include "occ_types.hpp"
-
-#ifdef __cplusplus
 extern "C" {
 #endif
     gcCircle gcMakeCircle(gpPnt center, double radius);

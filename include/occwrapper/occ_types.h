@@ -1,3 +1,6 @@
+#ifndef bool
+#include <stdbool.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,7 +36,7 @@ extern "C" {
     typedef void* GeomCurve;
     typedef void* STEPControlWriter;
     typedef void* ShapeIterator;
-		typedef void* StlAPIWriter;
+    typedef void* StlAPIWriter;
     typedef void* TopoDSCompound;
     typedef void* TopoDSEdge;
     typedef void* TopoDSWire;

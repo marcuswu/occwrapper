@@ -1,5 +1,5 @@
 #include <gp_Pln.hxx>
-#include <occwrapper/gp_pln.hpp>
+#include <occwrapper/gp_pln.h>
 
 gpPln gpPln_Init() {
     gp_Pln * ret = new gp_Pln();

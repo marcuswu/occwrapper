@@ -1,11 +1,10 @@
-#include <gp_Ax3.hxx>
-
-#include "occ_types.hpp"
+#include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
+#include <gp_Ax3.hxx>
 extern "C" {
 #endif
-    gpCirc gpCirc_Init(gpPnt center, double radius);
+    gpCirc gpCirc_Init(gpAx2 center, double radius);
     double gpCirc_Radius(gpCirc circle);
     void gpCirc_Free(gpCirc circle);
 #ifdef __cplusplus

@@ -1,6 +1,6 @@
 #include <GeomAdaptor_Surface.hxx>
 
-#include <occwrapper/geom_adapter.hpp>
+#include <occwrapper/geom_adapter.h>
 
 GeomAdapterSurface GeomAdapterSurface_Init(gcSurface surface) {
     Handle(Geom_Surface)* s = (Handle(Geom_Surface)*)surface;
