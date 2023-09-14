@@ -1,5 +1,11 @@
 #include <gp_Vec.hxx>
+#include <gp.hxx>
+#include <Precision.hxx>
 #include <occwrapper/gp_vec.h>
+
+double gpResolution() {
+    return gp::Resolution();
+}
 
 gpVec gpVec_Init(double x, double y, double z) {
     gp_Vec * ret = new gp_Vec(x, y, z);
@@ -22,6 +28,27 @@ gpVec gpVec_InitPoints(gpPnt start, gpPnt end) {
 void gpVec_Free(gpVec vector) {
     gp_Vec * v = (gp_Vec *)vector;
     delete v;
+}
+
+double gpVec_X(gpVec vec) {
+    gp_Vec * v = (gp_Vec *)vec;
+    return v->X();
+}
+
+double gpVec_Y(gpVec vec) {
+    gp_Vec * v = (gp_Vec *)vec;
+    return v->Y();
+}
+
+double gpVec_Z(gpVec vec) {
+    gp_Vec * v = (gp_Vec *)vec;
+    return v->Z();
+}
+
+bool gpVec_IsEqual(gpVec vec, gpVec other) {
+    gp_Vec *v = (gp_Vec *)vec;
+    gp_Vec *o = (gp_Vec *)other;
+    return v->IsEqual(*o, Precision::Confusion(), Precision::Angular());
 }
 
 gpVec gpVec_Multiplied(gpVec v, double dist) {

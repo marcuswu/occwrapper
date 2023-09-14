@@ -4,17 +4,12 @@
 
 #include <occwrapper/geom_curve.h>
 
-gcCircle gcMakeCircle(gpAx2 center, double radius) {
+gcTrimmedCurve gcMakeCircle(gpAx2 center, double radius) {
     gp_Ax2 * c = (gp_Ax2 *)center;
     // transfer ownership of circle transient to new handle
     // use new handle as our void* pointer
     Handle(Geom_Circle) *ret = new Handle(Geom_Circle)(GC_MakeCircle(*c, radius));
     return (void*) ret;
-}
-
-void gcCircle_Free(gcCircle circle) {
-    Handle(Geom_Circle) *c = (Handle(Geom_Circle) *)circle;
-    delete c;
 }
 
 gcTrimmedCurve gcMakeArcOfCircle(gpCirc circle, gpPnt pt1, gpPnt pt2, bool sense) {
@@ -43,6 +38,3 @@ GeomCurve gcTrimmedCurve_ToGeomCurve(gcTrimmedCurve curve) {
     return (void*) curve;
 }
 
-GeomCurve gcCircle_ToGeomCurve(gcCircle curve) {
-    return (void*) curve;
-}

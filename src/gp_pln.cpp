@@ -1,4 +1,5 @@
 #include <gp_Pln.hxx>
+#include <Precision.hxx>
 #include <occwrapper/gp_pln.h>
 
 gpPln gpPln_Init() {
@@ -33,10 +34,10 @@ gpAx3 gpPln_Position(gpPln plane) {
     return (void *) ax3;
 }
 
-bool gpPln_ContainsPoint(gpPln plane, gpPnt point, double tolerance) {
+bool gpPln_ContainsPoint(gpPln plane, gpPnt point) {
     gp_Pln * p = (gp_Pln *) plane;
     gp_Pnt * pnt = (gp_Pnt *) point;
-    return p->Contains(*pnt, tolerance);
+    return p->Contains(*pnt, Precision::Confusion());
 }
 
 void gpPln_Free(gpPln plane) {

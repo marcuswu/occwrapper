@@ -15,6 +15,7 @@ extern "C" {
     typedef void* gpDir;
     typedef void* gpPln;
     typedef void* gpPnt;
+    typedef void* gpQuaternion;
     typedef void* gpTrsf;
     typedef void* gpVec;
     typedef void* BRepAdapterCurve;
@@ -44,6 +45,7 @@ extern "C" {
     typedef void* TopoDSShape;
     typedef void* TopoDSVertex;
     typedef void* TopExpExplorer;
+    typedef void* TopLocLocation;
     typedef void* TopToolsListOfShape;
 #ifdef __cplusplus
 }

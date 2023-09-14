@@ -19,6 +19,7 @@ extern "C" {
     BRepBuilderAPIMakeWire BRepBuilderAPIMakeWire_Init();
     BRepBuilderAPIMakeWire BRepBuilderAPIMakeWire_InitWithTopoDSEdge(TopoDSEdge edge);
     void BRepBuilderAPIMakeWire_AddEdge(BRepBuilderAPIMakeWire wire, TopoDSEdge edge);
+    void BRepBuilderAPIMakeWire_AddWire(BRepBuilderAPIMakeWire makeWire, TopoDSWire wire);
     TopoDSWire BRepBuilderAPIMakeWire_ToTopoDSWire(BRepBuilderAPIMakeWire wire);
     void BRepBuilderAPIMakeWire_Free(BRepBuilderAPIMakeWire wire);
 

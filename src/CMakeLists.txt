@@ -18,12 +18,14 @@ set(HEADER_LIST
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_dir.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_pln.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_pnt.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_quaternion.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_trsf.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_vec.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/occ_types.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/stlapi_writer.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/stepcontrol_writer.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/topexp_explorer.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/toploc_location.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/topods_compound.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/topods_shape.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/toptools_listofshape.h)
@@ -48,11 +50,13 @@ set(SOURCE_LIST
     gp_dir.cpp
     gp_pln.cpp
     gp_pnt.cpp
+    gp_quaternion.cpp
     gp_trsf.cpp
     gp_vec.cpp
     stlapi_writer.cpp
     stepcontrol_writer.cpp
     topexp_explorer.cpp
+    toploc_location.cpp
     topods_shape.cpp
     topods_compound.cpp
     toptools_listofshape.cpp)

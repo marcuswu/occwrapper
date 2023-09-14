@@ -18,6 +18,17 @@ TopoDSShape TopToolsListOfShape_Append(TopToolsListOfShape list, TopoDSShape sha
     return shape;
 }
 
+void TopToolsListOfShape_AppendList(TopToolsListOfShape list, TopToolsListOfShape other) {
+    TopTools_ListOfShape *l = (TopTools_ListOfShape*) list;
+    TopTools_ListOfShape *o = (TopTools_ListOfShape*) other;
+    l->Append(*o);
+}
+
+int TopToolsListOfShape_Extent(TopToolsListOfShape list) {
+    TopTools_ListOfShape *l = (TopTools_ListOfShape*) list;
+    return l->Extent();
+}
+
 ShapeIterator TopToolsListOfShape_Begin(TopToolsListOfShape list) {
     TopTools_ListOfShape *l = (TopTools_ListOfShape*) list;
     NCollection_StlIterator<std::forward_iterator_tag, TopoDS_ListIteratorOfListOfShape, TopoDS_Shape, false> *iter = 

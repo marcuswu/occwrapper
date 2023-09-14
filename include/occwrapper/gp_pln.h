@@ -9,7 +9,7 @@ extern "C" {
     gpPln gpPln_InitPntDir(gpPnt origin, gpDir dir);
     gpAx1 gpPln_Axis(gpPln plane);
     gpAx3 gpPln_Position(gpPln plane);
-    bool gpPln_ContainsPoint(gpPln plane, gpPnt point, double tolerance);
+    bool gpPln_ContainsPoint(gpPln plane, gpPnt point);
     void gpPln_Free(gpPln plane);
 #ifdef __cplusplus
 }

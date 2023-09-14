@@ -62,6 +62,12 @@ void BRepBuilderAPIMakeWire_AddEdge(BRepBuilderAPIMakeWire wire, TopoDSEdge edge
     makeWire->Add(*e);
 }
 
+void BRepBuilderAPIMakeWire_AddWire(BRepBuilderAPIMakeWire makeWire, TopoDSWire wire) {
+    BRepBuilderAPI_MakeWire *mw = (BRepBuilderAPI_MakeWire*)makeWire;
+    TopoDS_Wire *w = (TopoDS_Wire*)wire;
+    mw->Add(*w);
+}
+
 TopoDSWire BRepBuilderAPIMakeWire_ToTopoDSWire(BRepBuilderAPIMakeWire wire) {
     BRepBuilderAPI_MakeWire *makeWire = (BRepBuilderAPI_MakeWire*)wire;
     TopoDS_Shape *ret = new TopoDS_Shape();

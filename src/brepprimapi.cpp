@@ -11,6 +11,14 @@ BRepPrimAPIMakeRevol BRepPrimAPIMakeRevol_Init(TopoDSFace face, gpAx1 axis, doub
 
 }
 
+TopoDSShape BRepPrimAPIMakeRevol_Shape(BRepPrimAPIMakeRevol makeRevol) {
+    BRepPrimAPI_MakeRevol *revol = (BRepPrimAPI_MakeRevol *)makeRevol;
+
+    TopoDS_Shape *ret = new TopoDS_Shape();
+    *ret = revol->Shape();
+    return ret;
+}
+
 void BRepPrimAPIMakeRevol_Free(BRepPrimAPIMakeRevol makeRevol) {
     BRepPrimAPI_MakeRevol *revol = (BRepPrimAPI_MakeRevol *)makeRevol;
     delete revol;
@@ -21,6 +29,14 @@ BRepPrimAPIMakePrism BRepPrimAPIMakePrism_Init(TopoDSFace face, gpVec vec) {
     gp_Vec *v = (gp_Vec *)vec;
     BRepPrimAPI_MakePrism *ret = new BRepPrimAPI_MakePrism(*f, *v);
     return (void*) ret;
+}
+
+TopoDSShape BRepPrimAPIMakePrism_Shape(BRepPrimAPIMakePrism makePrism) {
+    BRepPrimAPI_MakePrism *prism = (BRepPrimAPI_MakePrism *)makePrism;
+
+    TopoDS_Shape *ret = new TopoDS_Shape();
+    *ret = prism->Shape();
+    return ret;
 }
 
 void BRepPrimAPIMakePrism_Free(BRepPrimAPIMakePrism makePrism) {
