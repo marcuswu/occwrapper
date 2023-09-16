@@ -5,7 +5,7 @@
 extern "C" {
 #endif
     StlAPIWriter StlAPIWriter_Init();
-    int StlAPIWriter_Write(StlAPIWriter writer, TopoDSCompound res, char *filename);
+    bool StlAPIWriter_Write(StlAPIWriter writer, TopoDSCompound res, char *filename);
     void StlAPIWriter_Free(StlAPIWriter writer);
 #ifdef __cplusplus
 }
