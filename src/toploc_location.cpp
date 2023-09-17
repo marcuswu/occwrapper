@@ -1,5 +1,5 @@
 #include <TopoDS_Shape.hxx>
-#include <occwrapper/topods_shape.h>
+#include <occwrapper/toploc_location.h>
 
 void TopLocLocation_Free(TopLocLocation loc) {
     TopLoc_Location *l = (TopLoc_Location *) loc;

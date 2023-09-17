@@ -1,5 +1,5 @@
 #include <gp_Quaternion.hxx>
-#include <occwrapper/gp_trsf.h>
+#include <occwrapper/gp_quaternion.h>
 
 
 gpQuaternion gpQuaternion_Inverted(gpQuaternion q) {

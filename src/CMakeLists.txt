@@ -106,10 +106,23 @@ set_property(TARGET occwrapper
 set_property(TARGET occwrapper PROPERTY POSITION_INDEPENDENT_CODE ON)
 set_property(TARGET occwrapper_static PROPERTY POSITION_INDEPENDENT_CODE ON)
 
+set (OCCWRAPPER_INCLUDE_DIR occwrapper)
+
+configure_file(occwrapper.pc.in occwrapper.pc @ONLY)
+include(CMakePackageConfigHelpers)
+configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/Config.cmake.in
+	"${CMAKE_CURRENT_BINARY_DIR}/occwrapperConfig.cmake"
+	INSTALL_DESTINATION "lib/cmake/occwrapper"
+	PATH_VARS OCCWRAPPER_INCLUDE_DIR
+	NO_SET_AND_CHECK_MACRO
+	NO_CHECK_REQUIRED_COMPONENTS_MACRO
+)
+IF (NOT CMAKE_INSTALL_LIBDIR)
+	SET(CMAKE_INSTALL_LIBDIR lib)
+ENDIF()
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/occwrapperConfig.cmake DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/occwrapper)
+install(FILES ${CMAKE_BINARY_DIR}/src/occwrapper.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
 install (TARGETS occwrapper
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     PUBLIC_HEADER DESTINATION include/occwrapper)
 
-configure_file(occwrapper.pc.in occwrapper.pc @ONLY)
-
-install(FILES ${CMAKE_BINARY_DIR}/src/occwrapper.pc DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig)
