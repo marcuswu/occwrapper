@@ -1,8 +1,8 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <BRepGProp.hxx>
-#include <GProp_GProps.hxx>
+#include <opencascade/BRepGProp.hxx>
+#include <opencascade/GProp_GProps.hxx>
 extern "C" {
 #endif
 

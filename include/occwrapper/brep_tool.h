@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <BRep_Tool.hxx>
+#include <opencascade/BRep_Tool.hxx>
 extern "C" {
 #endif
 

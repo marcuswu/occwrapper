@@ -1,12 +1,13 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <TopoDS_Shape.hxx>
+#include <opencascade/TopoDS_Shape.hxx>
 extern "C" {
 #endif
     bool TopoDSShape_IsEqual(TopoDSShape shape, TopoDSShape other);
     void TopoDSShape_Free(TopoDSShape shape);
     TopLocLocation TopoDSShape_Location(TopoDSShape shape);
+    TopoDSWire TopoDSShape_Wire(TopoDSShape shape);
 #ifdef __cplusplus
 }
 #endif

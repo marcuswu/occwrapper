@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <gp_Ax2.hxx>
+#include <opencascade/gp_Ax2.hxx>
 extern "C" {
 #endif
     gpAx2 gpAx2_Init(gpPnt origin, gpDir dir);

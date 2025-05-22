@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <gp_Pln.hxx>
+#include <opencascade/gp_Pln.hxx>
 extern "C" {
 #endif
     gpPln gpPln_Init();

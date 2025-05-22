@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <GeomAdaptor_Surface.hxx>
+#include <opencascade/GeomAdaptor_Surface.hxx>
 extern "C" {
 #endif
     GeomAdapterSurface GeomAdapterSurface_Init(gcSurface surface);

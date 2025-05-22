@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <TopTools_ListOfShape.hxx>
+#include <opencascade/TopTools_ListOfShape.hxx>
 extern "C" {
 #endif
     TopToolsListOfShape TopToolsListOfShape_Init();

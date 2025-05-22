@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <BRepAdaptor_Curve.hxx>
+#include <opencascade/BRepAdaptor_Curve.hxx>
 extern "C" {
 #endif
 

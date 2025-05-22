@@ -1,10 +1,10 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <BRepBuilderAPI_MakeEdge.hxx>
-#include <BRepBuilderAPI_MakeWire.hxx>
-#include <BRepBuilderAPI_MakeFace.hxx>
-#include <BRepBuilderAPI_Transform.hxx>
+#include <opencascade/BRepBuilderAPI_MakeEdge.hxx>
+#include <opencascade/BRepBuilderAPI_MakeWire.hxx>
+#include <opencascade/BRepBuilderAPI_MakeFace.hxx>
+#include <opencascade/BRepBuilderAPI_Transform.hxx>
 extern "C" {
 #endif
     BRepBuilder BRepBuilder_Init();
@@ -28,6 +28,10 @@ extern "C" {
     void BRepBuilderAPIMakeFace_Free(BRepBuilderAPIMakeFace face);
 
     TopoDSShape BRepBuilderAPIMakeShape_Shape(BRepBuilderAPIMakeShape makeShape);
+
+    BRepBuilderAPITransform BRepBuilderAPITransform_InitWithWireTrsf(TopoDSWire wire, gpTrsf trsf);
+    TopoDSShape BRepBuilderAPITransform_Shape(BRepBuilderAPITransform breptrsf);
+    void BRepBuilderAPITransform_Free(BRepBuilderAPITransform breptrsf);
 #ifdef __cplusplus
 }
 #endif

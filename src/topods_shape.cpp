@@ -1,4 +1,5 @@
 #include <TopoDS_Shape.hxx>
+#include <TopoDS.hxx>
 #include <occwrapper/topods_shape.h>
 
 bool TopoDSShape_IsEqual(TopoDSShape shape, TopoDSShape other) {
@@ -17,4 +18,10 @@ TopLocLocation TopoDSShape_Location(TopoDSShape shape) {
 void TopoDSShape_Free(TopoDSShape shape) {
     TopoDS_Shape *s = (TopoDS_Shape *) shape;
     delete s;
+}
+
+TopoDSWire TopoDSShape_Wire(TopoDSShape shape) {
+    TopoDS_Shape *s = (TopoDS_Shape *) shape;
+    TopoDS::Wire(*s); // Throws exception on the wrong type
+    return (void*) s;
 }

@@ -27,6 +27,7 @@ extern "C" {
     typedef void* BRepBuilderAPIMakeWire;
     typedef void* BRepBuilderAPIMakeFace;
     typedef void* BRepBuilderAPIMakeShape;
+    typedef void* BRepBuilderAPITransform;
     typedef void* BRepBuilder;
     typedef void* BRepMeshIncrementalMesh;
     typedef void* BRepPrimAPIMakePrism;

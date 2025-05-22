@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <TopoDS_Compound.hxx>
+#include <opencascade/TopoDS_Compound.hxx>
 extern "C" {
 #endif
     TopoDSCompound TopoDSCompound_Init();

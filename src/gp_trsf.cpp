@@ -7,6 +7,12 @@ gpTrsf gpTrsf_Init() {
     return (void*) ret;
 }
 
+void gpTrsf_SetMirror(gpTrsf transform, gpAx1 axis){
+    gp_Trsf * trsf = (gp_Trsf *)transform;
+    gp_Ax1 * a = (gp_Ax1 *)axis;
+    trsf->SetMirror(*a);
+}
+
 void gpTrsf_SetTransformation(gpTrsf transform, gpAx3 from, gpAx3 to) {
     gp_Trsf * trsf = (gp_Trsf *)transform;
     gp_Ax3 * f = (gp_Ax3 *)from;

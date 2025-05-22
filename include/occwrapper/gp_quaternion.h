@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <gp_Quaternion.hxx>
+#include <opencascade/gp_Quaternion.hxx>
 extern "C" {
 #endif
     gpQuaternion gpQuaternion_Inverted(gpQuaternion q);

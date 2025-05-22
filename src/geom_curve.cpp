@@ -21,6 +21,15 @@ gcTrimmedCurve gcMakeArcOfCircle(gpCirc circle, gpPnt pt1, gpPnt pt2, bool sense
     return (void*) ret;
 }
 
+gcTrimmedCurve gcMakeArcOfCirclePts(gpPnt pt1, gpPnt pt2, gpPnt pt3) {
+    gp_Pnt *pnt1 = (gp_Pnt *)pt1;
+    gp_Pnt *pnt2 = (gp_Pnt *)pt2;
+    gp_Pnt *pnt3 = (gp_Pnt *)pt3;
+
+    Handle(Geom_TrimmedCurve) *ret = new Handle(Geom_TrimmedCurve)(GC_MakeArcOfCircle(*pnt1, *pnt2, *pnt3));
+    return (void*) ret;
+}
+
 void gcTrimmedCurve_Free(gcTrimmedCurve arc) {
     Handle(Geom_TrimmedCurve) *a = (Handle(Geom_TrimmedCurve) *)arc;
     delete a;

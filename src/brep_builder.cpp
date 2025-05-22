@@ -104,3 +104,22 @@ TopoDSShape BRepBuilderAPIMakeShape_Shape(BRepBuilderAPIMakeShape makeShape) {
     *shape = s->Shape();
     return (void*) shape;
 }
+
+BRepBuilderAPITransform BRepBuilderAPITransform_InitWithWireTrsf(TopoDSWire wire, gpTrsf trsf) {
+    TopoDS_Wire *w = (TopoDS_Wire*)wire;
+    gp_Trsf * t = (gp_Trsf *)trsf;
+    BRepBuilderAPI_Transform *transform = new BRepBuilderAPI_Transform(*w, *t);
+    return transform;
+}
+
+TopoDSShape BRepBuilderAPITransform_Shape(BRepBuilderAPITransform breptrsf) {
+    BRepBuilderAPI_Transform *t = (BRepBuilderAPI_Transform*)breptrsf;
+    TopoDS_Shape *shape = new TopoDS_Shape();
+    *shape = t->Shape();
+    return (void *) shape;
+}
+
+void BRepBuilderAPITransform_Free(BRepBuilderAPITransform breptrsf) {
+    BRepBuilderAPI_Transform *t = (BRepBuilderAPI_Transform*)breptrsf;
+    delete t;
+}

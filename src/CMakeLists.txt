@@ -80,10 +80,10 @@ target_include_directories(occwrapper PUBLIC ../include)
 target_include_directories(occwrapper_static PUBLIC ../include)
 
 set (OCCT_LIBS
-    TKSTL
+    TKDESTL
     TKBRep
-    TKIGES
-    TKSTEP
+    TKDEIGES
+    TKDESTEP
     TKernel
     TKMath
     TKMesh

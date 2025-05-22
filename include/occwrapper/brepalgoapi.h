@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <BRepAlgoAPI_BooleanOperation.hxx>
+#include <opencascade/BRepAlgoAPI_BooleanOperation.hxx>
 extern "C" {
 #endif
 

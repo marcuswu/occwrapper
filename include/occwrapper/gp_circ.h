@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <gp_Ax3.hxx>
+#include <opencascade/gp_Ax2.hxx>
 extern "C" {
 #endif
     gpCirc gpCirc_Init(gpAx2 center, double radius);

@@ -1,7 +1,7 @@
 #include <occwrapper/occ_types.h>
 
 #ifdef __cplusplus
-#include <BRepMesh_IncrementalMesh.hxx>
+#include <opencascade/BRepMesh_IncrementalMesh.hxx>
 extern "C" {
 #endif
 

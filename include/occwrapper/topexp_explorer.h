@@ -4,8 +4,8 @@
 typedef int TopAbsShapeEnum;
 
 #ifdef __cplusplus
-#include <TopAbs_ShapeEnum.hxx>
-#include <TopExp_Explorer.hxx>
+#include <opencascade/TopAbs_ShapeEnum.hxx>
+#include <opencascade/TopExp_Explorer.hxx>
 extern "C" {
 #endif
     TopExpExplorer TopExpExplorer_Init(TopoDSShape shape, TopAbsShapeEnum toFind);

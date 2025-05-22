@@ -7,7 +7,7 @@ StlAPIWriter StlAPIWriter_Init() {
     return (void *) ret;
 }
 
-bool StlAPIWriter_Write(StlAPIWriter writer, TopoDSCompound res, char *filename) {
+bool StlAPIWriter_Write(StlAPIWriter writer, TopoDSCompound res, const char *filename) {
     StlAPI_Writer *w = (StlAPI_Writer *) writer;
     TopoDS_Compound *resource = (TopoDS_Compound *) res;
     return w->Write(*resource, filename);
