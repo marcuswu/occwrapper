@@ -58,6 +58,12 @@ gpVec gpVec_Multiplied(gpVec v, double dist) {
     return (void*) ret;
 }
 
+double gpVec_Dot(gpVec v, gpVec other) {
+    gp_Vec * vec = (gp_Vec *)v;
+    gp_Vec * o = (gp_Vec *)other;
+    return vec->Dot(*o);
+}
+
 gpVec gpVec_Crossed(gpVec v, gpVec other) {
     gp_Vec * vec = (gp_Vec *)v;
     gp_Vec * o = (gp_Vec *)other;

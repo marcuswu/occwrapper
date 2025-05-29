@@ -13,6 +13,7 @@ extern "C" {
     double gpVec_Y(gpVec vec);
     double gpVec_Z(gpVec vec);
     bool gpVec_IsEqual(gpVec vec, gpVec other);
+    double gpVec_Dot(gpVec v, gpVec other);
     gpVec gpVec_Multiplied(gpVec v, double dist);
     gpVec gpVec_Crossed(gpVec v, gpVec other);
     gpVec gpVec_Normalized(gpVec v);
