@@ -4,7 +4,7 @@
 #include <opencascade/gp_Ax2.hxx>
 extern "C" {
 #endif
-    gpAx2 gpAx2_Init(gpPnt origin, gpDir dir);
+    gpAx2 gpAx2_Init(gpPnt origin, gpDir normal, gpDir xAxis);
     void gpAx2_Free(gpAx2 axis);
 #ifdef __cplusplus
 }

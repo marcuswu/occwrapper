@@ -12,6 +12,7 @@ extern "C" {
     void BRepBuilder_Add(BRepBuilder builder, TopoDSShape res, TopoDSShape shape);
     void BRepBuilder_Free(BRepBuilder builder);
 
+    void BRepBuilderAPI_SetPrecision(double precision);
     BRepBuilderAPIMakeEdge BRepBuilderAPIMakeEdge_InitWithGeomCurve(GeomCurve curve);
     TopoDSEdge BRepBuilderAPIMakeEdge_ToTopoDSEdge(BRepBuilderAPIMakeEdge edge);
     void BRepBuilderAPIMakeEdge_Free(BRepBuilderAPIMakeEdge edge);

@@ -2,6 +2,7 @@
 #include <TopoDS_Compound.hxx>
 #include <BRepBuilderAPI_MakeEdge.hxx>
 #include <TopoDS_Wire.hxx>
+#include <BRepBuilderAPI.hxx>
 #include <occwrapper/brep_builder.h>
 
 BRepBuilder BRepBuilder_Init() {
@@ -25,6 +26,10 @@ void BRepBuilder_Add(BRepBuilder builder, TopoDSShape res, TopoDSShape shape) {
 void BRepBuilder_Free(BRepBuilder builder) {
     BRep_Builder *b = (BRep_Builder *) builder;
     delete b;
+}
+
+void BRepBuilderAPI_SetPrecision(double precision) {
+    BRepBuilderAPI::Precision(precision);
 }
 
 BRepBuilderAPIMakeEdge BRepBuilderAPIMakeEdge_InitWithGeomCurve(GeomCurve curve) {
