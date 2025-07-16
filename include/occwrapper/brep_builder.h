@@ -30,7 +30,7 @@ extern "C" {
 
     TopoDSShape BRepBuilderAPIMakeShape_Shape(BRepBuilderAPIMakeShape makeShape);
 
-    BRepBuilderAPITransform BRepBuilderAPITransform_InitWithWireTrsf(TopoDSWire wire, gpTrsf trsf);
+    BRepBuilderAPITransform BRepBuilderAPITransform_InitWithShapeTrsf(TopoDSShape shape, gpTrsf trsf);
     TopoDSShape BRepBuilderAPITransform_Shape(BRepBuilderAPITransform breptrsf);
     void BRepBuilderAPITransform_Free(BRepBuilderAPITransform breptrsf);
 #ifdef __cplusplus

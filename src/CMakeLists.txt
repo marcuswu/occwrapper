@@ -1,5 +1,6 @@
 set(HEADER_LIST 
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepalgoapi.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepfilletapi.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepgprop.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepmesh.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brepprimapi.h
@@ -7,6 +8,7 @@ set(HEADER_LIST
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_adapter.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_builder.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/brep_tool.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gcpnts.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geomlprop_slprops.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_adapter.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/geom_curve.h
@@ -22,6 +24,7 @@ set(HEADER_LIST
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_trsf.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/gp_vec.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/occ_types.h
+    ${OCCWrapper_SOURCE_DIR}/include/occwrapper/occutils.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/stlapi_writer.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/stepcontrol_writer.h
     ${OCCWrapper_SOURCE_DIR}/include/occwrapper/topexp_explorer.h
@@ -32,6 +35,7 @@ set(HEADER_LIST
 
 set(SOURCE_LIST
     brepalgoapi.cpp
+    brepfilletapi.cpp
     brepgprop.cpp
     brepmesh.cpp
     brepprimapi.cpp
@@ -39,6 +43,7 @@ set(SOURCE_LIST
     brep_adapter.cpp
     brep_builder.cpp
     brep_tool.cpp
+    gcpnts.cpp
     geomlprop_slprops.cpp
     geom_adapter.cpp
     geom_curve.cpp
@@ -53,6 +58,7 @@ set(SOURCE_LIST
     gp_quaternion.cpp
     gp_trsf.cpp
     gp_vec.cpp
+    occutils.cpp
     stlapi_writer.cpp
     stepcontrol_writer.cpp
     topexp_explorer.cpp
@@ -84,6 +90,7 @@ set (OCCT_LIBS
     TKBRep
     TKDEIGES
     TKDESTEP
+    TKFillet
     TKernel
     TKMath
     TKMesh

@@ -15,6 +15,11 @@ TopLocLocation TopoDSShape_Location(TopoDSShape shape) {
     return (void*) loc;
 }
 
+int TopoDSShape_Orientation(TopoDSShape shape) {
+    TopoDS_Shape *s = (TopoDS_Shape *) shape;
+    return (int) s->Orientation();
+}
+
 void TopoDSShape_Free(TopoDSShape shape) {
     TopoDS_Shape *s = (TopoDS_Shape *) shape;
     delete s;

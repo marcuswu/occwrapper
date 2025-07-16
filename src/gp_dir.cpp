@@ -39,6 +39,12 @@ bool gpDir_IsParallel(gpDir dir, gpDir other) {
     return d->IsParallel(*o, Precision::Angular());
 }
 
+bool gpDir_IsEqual(gpDir dir, gpDir other) {
+    gp_Dir * d = (gp_Dir *)dir;
+    gp_Dir * o = (gp_Dir *)other;
+    return d->IsEqual(*o, Precision::Angular());
+}
+
 double gpDir_Dot(gpDir dir, gpDir other) {
     gp_Dir * d = (gp_Dir *)dir;
     gp_Dir * o = (gp_Dir *)other;

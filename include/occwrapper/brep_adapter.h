@@ -18,6 +18,7 @@ gpCirc BRepAdapterCurve_ToCircle(BRepAdapterCurve curve);
 BRepAdapterSurface BRepAdapterSurface_Init(TopoDSFace face);
 BRepAdapterSurface BRepAdapterSurface_InitRestriction(TopoDSFace face, bool restriction);
 gpPln BRepAdapterSurface_Plane(BRepAdapterSurface surface);
+gpDir BRepAdapterSurface_Direction(BRepAdapterSurface surface);
 GeomAbs_SurfaceType BRepAdapterSurface_Type(BRepAdapterSurface surface);
 void BRepAdapterSurface_Free(BRepAdapterSurface surface);
 

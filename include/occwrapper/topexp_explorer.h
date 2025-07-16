@@ -14,6 +14,8 @@ extern "C" {
     void TopExpExplorer_Next(TopExpExplorer exp);
     TopoDSShape TopExpExplorer_Current(TopExpExplorer exp);
     int TopExpExplorer_Depth(TopExpExplorer exp);
+    TopoDSVertex TopExp_FirstVertex(TopoDSEdge edge);
+    TopoDSVertex TopExp_LastVertex(TopoDSEdge edge);
 #ifdef __cplusplus
 }
 #endif

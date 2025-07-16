@@ -47,6 +47,13 @@ BRepAdapterSurface BRepAdapterSurface_InitRestriction(TopoDSFace face, bool rest
     return (void *) ret;
 }
 
+gpDir BRepAdapterSurface_Direction(BRepAdapterSurface surface) {
+    BRepAdaptor_Surface *s = (BRepAdaptor_Surface *) surface;
+    gp_Dir *dir = new gp_Dir();
+    *dir = s->Direction();
+    return (void *) dir;
+}
+
 gpPln BRepAdapterSurface_Plane(BRepAdapterSurface surface) {
     BRepAdaptor_Surface *s = (BRepAdaptor_Surface *) surface;
     gp_Pln *plane = new gp_Pln();

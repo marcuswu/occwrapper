@@ -29,10 +29,14 @@ extern "C" {
     typedef void* BRepBuilderAPIMakeShape;
     typedef void* BRepBuilderAPITransform;
     typedef void* BRepBuilder;
+    typedef void* BRepFilletAPIMakeFillet;
     typedef void* BRepMeshIncrementalMesh;
+    typedef void* BRepPrimAPIMakeBox;
+    typedef void* BRepPrimAPIMakeCylinder;
     typedef void* BRepPrimAPIMakePrism;
     typedef void* BRepPrimAPIMakeRevol;
     typedef void* GPropGProps;
+    typedef void* GeomAdapterCurve;
     typedef void* GeomAdapterSurface;
     typedef void* GeomLPropSLProps;
     typedef void* GeomCurve;

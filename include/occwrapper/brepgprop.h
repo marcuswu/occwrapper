@@ -7,6 +7,7 @@ extern "C" {
 #endif
 
 void BRepGProp_SurfaceProperties(TopoDSShape shape, GPropGProps sprops, bool skipShared, bool useTriangulation);
+void BRepGProp_LinearProperties(TopoDSShape shape, GPropGProps sprops, bool skipShared, bool useTriangulation);
 
 #ifdef __cplusplus
 }

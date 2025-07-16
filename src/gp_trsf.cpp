@@ -20,6 +20,18 @@ void gpTrsf_SetTransformation(gpTrsf transform, gpAx3 from, gpAx3 to) {
     trsf->SetTransformation(*f, *t);
 }
 
+void gpTrsf_SetRotation(gpTrsf transform, gpAx1 axis, double rads) {
+    gp_Trsf * trsf = (gp_Trsf *)transform;
+    gp_Ax1 * a = (gp_Ax1 *)axis;
+    trsf->SetRotation(*a, rads);
+}
+
+void gpTrsf_SetTranslation(gpTrsf transform, gpVec vec) {
+    gp_Trsf * trsf = (gp_Trsf *)transform;
+    gp_Vec * v = (gp_Vec *)vec;
+    trsf->SetTranslation(*v);
+}
+
 gpQuaternion gpTrsf_GetRotation(gpTrsf transform) {
     gp_Trsf * trsf = (gp_Trsf *)transform;
     gp_Quaternion *q = new gp_Quaternion();

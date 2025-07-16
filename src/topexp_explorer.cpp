@@ -1,4 +1,6 @@
+#include <TopoDS_Edge.hxx>
 #include <TopExp_Explorer.hxx>
+#include <TopExp.hxx>
 #include <occwrapper/topexp_explorer.h>
 
 TopExpExplorer TopExpExplorer_Init(TopoDSShape shape, TopAbsShapeEnum toFind) {
@@ -32,4 +34,18 @@ TopoDSShape TopExpExplorer_Current(TopExpExplorer exp) {
 int TopExpExplorer_Depth(TopExpExplorer exp) {
     TopExp_Explorer *e = (TopExp_Explorer *) exp;
     return e->Depth();
+}
+
+TopoDSVertex TopExp_FirstVertex(TopoDSEdge edge) {
+    TopoDS_Edge *e = (TopoDS_Edge *)edge;
+    TopoDS_Vertex *v = new TopoDS_Vertex();
+    *v = TopExp::FirstVertex(*e);
+    return e;
+}
+
+TopoDSVertex TopExp_LastVertex(TopoDSEdge edge) {
+    TopoDS_Edge *e = (TopoDS_Edge *)edge;
+    TopoDS_Vertex *v = new TopoDS_Vertex();
+    *v = TopExp::LastVertex(*e);
+    return e;
 }

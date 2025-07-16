@@ -11,6 +11,7 @@ extern "C" {
     double gpDir_Y(gpDir dir);
     double gpDir_Z(gpDir dir);
     double gpDir_Dot(gpDir dir, gpDir other);
+    bool gpDir_IsEqual(gpDir dir, gpDir other);
     bool gpDir_IsParallel(gpDir dir, gpDir other);
 #ifdef __cplusplus
 }
