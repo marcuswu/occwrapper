@@ -29,6 +29,7 @@ extern "C" {
     typedef void* BRepBuilderAPIMakeShape;
     typedef void* BRepBuilderAPITransform;
     typedef void* BRepBuilder;
+    typedef void* BRepFilletAPIMakeChamfer;
     typedef void* BRepFilletAPIMakeFillet;
     typedef void* BRepMeshIncrementalMesh;
     typedef void* BRepPrimAPIMakeBox;
