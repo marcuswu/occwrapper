@@ -86,10 +86,10 @@ target_include_directories(occwrapper PUBLIC ../include)
 target_include_directories(occwrapper_static PUBLIC ../include)
 
 set (OCCT_LIBS
-    TKDESTL
+    TKSTL
     TKBRep
-    TKDEIGES
-    TKDESTEP
+    TKIGES
+    TKSTEP
     TKFillet
     TKernel
     TKMath

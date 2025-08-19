@@ -11,6 +11,17 @@ I am using this repository as part of another project of mine. I don't intent to
 * libfontconfig-dev
 
 ## Getting Started
+
+### Installing opencascade binaries
+This is the recommended and fastest option
+Installing the data-exchange packages will install all of the dependent occt packages necessary
+
+```
+apt install libocct-data-exchange-7.6
+apt install libocct-data-exchange-dev
+```
+
+### Building opencascade from source
 * [Download Open CASCADE](https://dev.opencascade.org/release)
 * `mkdir ~/src/occt`
 * `cd ~/src/occt`
@@ -24,3 +35,4 @@ I am using this repository as part of another project of mine. I don't intent to
 * `cmake [path_to_occwrapper_src]`
 * `make`
 * `sudo make install`
+
