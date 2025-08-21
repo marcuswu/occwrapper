@@ -68,7 +68,7 @@ set(SOURCE_LIST
     toptools_listofshape.cpp)
 
 add_library(occwrapper SHARED ${SOURCE_LIST} ${HEADER_LIST})
-add_library(occwrapper_static STATIC ${SOURCE_LIST} ${HEADER_LIST})
+# add_library(occwrapper_static STATIC ${SOURCE_LIST} ${HEADER_LIST})
 
 target_compile_options(occwrapper PUBLIC
      $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
@@ -76,14 +76,14 @@ target_compile_options(occwrapper PUBLIC
      $<$<CXX_COMPILER_ID:MSVC>:
           /W4>)
 
-target_compile_options(occwrapper_static PUBLIC
-     $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
-          -Wall>
-     $<$<CXX_COMPILER_ID:MSVC>:
-          /W4>)
+  # target_compile_options(occwrapper_static PUBLIC
+  #      $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
+  #           -Wall>
+  #      $<$<CXX_COMPILER_ID:MSVC>:
+  #           /W4>)
 
 target_include_directories(occwrapper PUBLIC ../include)
-target_include_directories(occwrapper_static PUBLIC ../include)
+# target_include_directories(occwrapper_static PUBLIC ../include)
 
 set (OCCT_LIBS
     TKSTL
@@ -97,10 +97,10 @@ set (OCCT_LIBS
     TKBO)
 
 target_link_libraries(occwrapper PUBLIC ${OCCT_LIBS})
-target_link_libraries(occwrapper_static PUBLIC ${OCCT_LIBS})
+# target_link_libraries(occwrapper_static PUBLIC ${OCCT_LIBS})
 
 target_compile_features(occwrapper PUBLIC cxx_std_11)
-target_compile_features(occwrapper_static PUBLIC cxx_std_11)
+# target_compile_features(occwrapper_static PUBLIC cxx_std_11)
 
 source_group(
     TREE "${PROJECT_SOURCE_DIR}/include"
@@ -111,7 +111,7 @@ source_group(
 set_property(TARGET occwrapper
     PROPERTY PUBLIC_HEADER ${HEADER_LIST})
 set_property(TARGET occwrapper PROPERTY POSITION_INDEPENDENT_CODE ON)
-set_property(TARGET occwrapper_static PROPERTY POSITION_INDEPENDENT_CODE ON)
+# set_property(TARGET occwrapper_static PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 set (OCCWRAPPER_INCLUDE_DIR occwrapper)
 
