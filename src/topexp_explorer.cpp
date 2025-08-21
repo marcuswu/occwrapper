@@ -1,4 +1,5 @@
 #include <TopoDS_Edge.hxx>
+#include <TopoDS_Vertex.hxx>
 #include <TopExp_Explorer.hxx>
 #include <TopExp.hxx>
 #include <occwrapper/topexp_explorer.h>
