@@ -36,3 +36,22 @@ apt install libocct-data-exchange-dev
 * `make`
 * `sudo make install`
 
+### Building and installing occwrapper
+* checkout the codebase:
+  ```bash
+  git clone git@github.com:marcuswu/occwrapper.git
+  ```
+* make a directory for the build:
+  ```bash
+  mkdir occwrapperBuild && cd occwrapperBuild
+  ```
+* use cmake to configure the build
+  ```bash
+  cmake ../occwrapper
+  ```
+* make and make install
+  ```bash
+  make && make install
+  ```
+  Note: sudo may be necessary for make install
+
